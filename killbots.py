@@ -5,17 +5,20 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.action_chains import ActionChains
 from webdriver_manager.chrome import ChromeDriverManager
-
-
+from dotenv import load_dotenv
+import os
 import time
+
+
+load_dotenv()
 
 # Get the path of the installed ChromeDriver
 driver_path = ChromeDriverManager().install()
 service = Service(driver_path)
 driver = webdriver.Chrome(service=service)
 
-username="username"
-password="password"
+username=os.getenv('TWITTER_USERNAME')
+password=os.getenv('TWITTER_PASSWORD')
 
 def login_to_x():
     driver.get("https://twitter.com/login")
