@@ -1,13 +1,18 @@
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.action_chains import ActionChains
+from webdriver_manager.chrome import ChromeDriverManager
+
+
 import time
 
-driver_path = "/path/chromedriver"
+# Get the path of the installed ChromeDriver
+driver_path = ChromeDriverManager().install()
 service = Service(driver_path)
-driver = webdriver.Chrome(Service=service)
+driver = webdriver.Chrome(service=service)
 
 username="username"
 password="password"
