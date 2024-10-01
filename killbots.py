@@ -19,10 +19,11 @@ driver = webdriver.Chrome(service=service)
 
 username=os.getenv('TWITTER_USERNAME')
 password=os.getenv('TWITTER_PASSWORD')
+default_sleep=os.getenv('DEFAULT_SLEEP')
 
 def login_to_x():
     driver.get("https://twitter.com/login")
-    time.sleep(5)
+    time.sleep(default_sleep)
     username_field = driver.find_element(By.NAME, "text")
     username_field.send_keys(username)
     username_field.send_keys(Keys.RETURN)
@@ -31,7 +32,7 @@ def login_to_x():
     password_field = driver.find_element(By.NAME, "password")
     password_field.send_keys(password)
     password_field.send_keys(Keys.RETURN)
-    time.sleep(5)
+    time.sleep(default_sleep)
 
     def main():
         login_to_x()
