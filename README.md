@@ -1,2 +1,2 @@
 # xbotkillr
-Bot killr
+Selenium based bot to remove other bots from x account.
