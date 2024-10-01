@@ -20,8 +20,7 @@ def login_to_x():
     username_field.send_keys(Keys.RETURN)
     time.sleep(5)
 
-    password_field = 
-    driver_find_element(By.NAME, "password")
+    password_field = driver.find_element(By.NAME, "password")
     password_field.send_keys(password)
     password_field.send_keys(Keys.RETURN)
     time.sleep(5)
